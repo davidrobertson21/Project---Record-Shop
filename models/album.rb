@@ -35,7 +35,7 @@ class Album
 
       WHERE id = '#{ @id }';"
     SqlRunner.run( sql )
-  end
+  end        
 
 
   def delete()
@@ -64,15 +64,33 @@ class Album
   end
 
 
+  def stock_levels()
+    if @quantity <= 5
+      return "Low Stock. This one is a banger"
+    elsif @quantity <= 10
+      return "Medium Stock"
+    elsif @quantity <= 19
+      return "Plenty of Stock"
+    else
+      return "Full Stock"
+    end
+  end
+
+
   def buy_price_total_for_all_album_in_stock()
     return @quantity * @buy_price
   end
 
 
-  def mark_up()
+  def sell_price()
     return @buy_price * 1.3
   end
 
+
+  def profit()
+    return sell_price / @buy_price
+    # return (@buy_price / 1.3) / @buy_price
+  end
 
 
 
