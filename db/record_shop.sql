@@ -17,10 +17,10 @@ CREATE TABLE genres
 CREATE TABLE albums
 (
   id SERIAL8 PRIMARY KEY,
-  title VARCHAR(255),
-  artist_id INT8 REFERENCES artists(id),
-  album_id INT8 REFERENCES albums(id),
-  quantity INT8,
-  buy_price FLOAT,
-  album_artwork VARCHAR(255)
+  title VARCHAR(255) NOT NULL,
+  artist_id INT8 REFERENCES artists(id) NOT NULL,
+  genre_id INT8 REFERENCES genres(id) NOT NULL,
+  quantity INT8 NOT NULL,
+  buy_price FLOAT NOT NULL,
+  album_artwork VARCHAR(255) NOT NULL
 );
