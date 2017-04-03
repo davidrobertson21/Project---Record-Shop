@@ -3,21 +3,22 @@
   <input id="title" type="text" name="title" />
   <br/>
   
-  <label for="artist_id">Artist:</label>
-  <input id="artist_id" type="text" name="artist_id" />
-  <br/>
-
-  <label for="genre_id">Genre:</label>
-  <select id="genre_id" name="genre_id">
-    <option value = "Grime">Grime</option>
-    <option value = "Hip-Hop">Hip-Hop</option>
-    <option value = "Drum & Bass">Drum & Bass</option>
-    <option value = "Rock">Rock</option>
-    <option value = "R&B">R&B</option>
-    <option value = "Techno">Techno</option>
-
+   <label for="artist_id">Artist:</label>
+  <select id="artist_id" name="artist_id">
+    <% @artists.each do |artist|  %>
+    <option value = <%= artist.id %>> <%= artist.name %> </option>
+    <%end%>
   </select>
-  <br/>
+    <br/>
+
+   <label for="genre_id">Genre:</label>
+   <select id="genre_id" name="genre_id">
+
+   <% @genres.each do |genre|  %>
+   <option value = <%= genre.id %>> <%= genre.type %> </option>
+   <%end%>
+   </select>
+   <br/>
 
   <label for="quantity">Quantity:</label>
   <input id="quantity" type="number" name="quantity" />

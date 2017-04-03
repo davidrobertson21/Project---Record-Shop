@@ -12,6 +12,8 @@ end
 
 get '/albums/new' do
   @albums = Album.all
+  @artists = Artist.all
+  @genres = Genre.all
   erb(:"albums/new")
 end
 
@@ -27,7 +29,8 @@ get '/albums/:id' do
 end
 
 post '/albums/:id/delete' do
-  Album.delete(params[:id])
+  @album = Album.find(params[:id])
+  @album.delete
   redirect to("/albums")
 end
 
@@ -36,7 +39,6 @@ get '/albums/:id/edit' do
   @album = Album.find(params[:id])
   @genres = Genre.all
   @artists = Artist.all
-
   erb(:"albums/edit")
 end
 
