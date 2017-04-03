@@ -18,8 +18,8 @@ CREATE TABLE albums
 (
   id SERIAL8 PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
-  artist_id INT8 REFERENCES artists(id) NOT NULL,
-  genre_id INT8 REFERENCES genres(id) NOT NULL,
+  artist_id INT8 REFERENCES artists(id),
+  genre_id INT8 REFERENCES genres(id),
   quantity INT8 NOT NULL,
   buy_price FLOAT NOT NULL,
   album_artwork VARCHAR(255) NOT NULL
