@@ -15,29 +15,30 @@ get '/artists/new' do
 end
 
 post '/artists' do
-  @artists = Artist.new(params)
-  @artists.save
+  @artist = Artist.new(params)
+  @artist.save
   redirect to("/artists")
 end
 
 get '/artists/:id' do
-  @artists = Artist.find(params[:id])
+  @artist = Artist.find(params[:id])
   erb(:"artists/show")
 end
 
 post '/artists/:id/delete' do
-  Artist.delete(params[:id])
+  @artist = Artist.find(params[:id])
+  @artist.delete
   redirect to("/artists")
 end
 
 # UPDATE
 get '/artists/:id/edit' do
-  @artists = Artist.find(params[:id])
+  @artist = Artist.find(params[:id])
   erb(:"/artists/edit")
 end
 
 post '/artists/:id/edit' do
-  @artists = Artist.new(params)
-  @artists.update
-  erb(:"artists/update")
+  @artist = Artist.new(params)
+  @artist.update
+  redirect to("/artists")
 end

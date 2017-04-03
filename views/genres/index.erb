@@ -1,0 +1,19 @@
+<h1>Genres</h1>
+<br/>
+<p><a href='/genres/new'> New Genre</a></p>
+<br/>
+<hr/>
+
+
+<% @genres.each do |genre| %>
+  <p><%= genre.name() %> </p>
+
+
+<p><a href='/genres/<%= artist.id %>'> Show Artist</a></p>
+<p><a href='/artists/<%= artist.id %>/edit'> Edit Artist</a></p>
+<form method="post" action="/artists/<%= artist.id %>/delete">
+<input type="submit" value="Delete Artist"/>
+</form>
+
+  <hr/>
+<% end %>

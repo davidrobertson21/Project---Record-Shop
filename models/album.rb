@@ -88,11 +88,11 @@ class Album
 
 
   def profit()
-    return (@buy_price * 1.3) / @buy_price
+    return (@buy_price * 1.3) - @buy_price
   end
 
   def potential_profit()
-    return ((@buy_price * 1.3) * @quantity) / @buy_price
+    return ((@buy_price * 1.3) * @quantity) - (@buy_price * @quantity)
   end
 
 
