@@ -23,7 +23,7 @@ end
 
 get '/albums/:id' do
   @albums = Album.find(params[:id])
-  erb(:show)
+  erb(:"albums/show")
 end
 
 post '/albums/:id/delete' do

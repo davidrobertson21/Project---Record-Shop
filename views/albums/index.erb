@@ -5,7 +5,12 @@
   <p>Artist: <%= album.artist.name %> </p>
   <p>Genre: <%= album.genre.type %> </p>
   <p>Quantity: <%= album.quantity %> </p>
-  <p>Buy Price: <%= album.buy_price %> </p>
+  <p>Stock Level: <%= album.stock_levels %> </p>
+  <p>Buy Price: £<%= album.buy_price %> </p>
+  <p>Sell Price: £<%= album.sell_price %> </p>
+  <p>Profit: £<%= album.profit %></p>
+  <p>Potential Profit of All in Stock: £<%= album.potential_profit %></p>
+
   <img src= <%= album.album_artwork %> width=5% />
   <p><a href='/albums/<%= album.id %>'> Show Album</a></p>
 
