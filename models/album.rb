@@ -66,7 +66,7 @@ class Album
 
   def stock_levels()
     if @quantity <= 5
-      return "Low Stock. This one is a banger"
+      return "Low Stock"
     elsif @quantity <= 10
       return "Medium Stock"
     elsif @quantity <= 19

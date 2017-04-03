@@ -16,13 +16,13 @@ get '/albums/new' do
 end
 
 post '/albums' do
-  @albums = Album.new(params)
-  @albums.save
+  @album = Album.new(params)
+  @album.save
   redirect to("/albums")
 end
 
 get '/albums/:id' do
-  @albums = Album.find(params[:id])
+  @album = Album.find(params[:id])
   erb(:"albums/show")
 end
 
@@ -33,12 +33,15 @@ end
 
 # UPDATE
 get '/albums/:id/edit' do
-  @albums = Album.find(params[:id])
-  erb(:edit)
+  @album = Album.find(params[:id])
+  @genres = Genre.all
+  @artists = Artist.all
+
+  erb(:"albums/edit")
 end
 
 post '/albums/:id/edit' do
-  @albums = Album.new(params)
-  @albums.update
-  erb(:update)
+  @album = Album.new(params)
+  @album.update
+  redirect to("/albums")
 end

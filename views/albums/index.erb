@@ -1,4 +1,9 @@
 <h1>Albums</h1>
+<br/>
+<p><a href='/albums/new'> New Album</a></p>
+<br/>
+<hr/>
+
 
 <% @albums.each do |album| %>
   <p>Title: <%= album.title() %> </p>
@@ -13,6 +18,8 @@
 
   <img src= <%= album.album_artwork %> width=5% />
   <p><a href='/albums/<%= album.id %>'> Show Album</a></p>
+  <p><a href='/albums/<%= album.id %>/edit'> Edit Album</a></p>
+  <p><a href='/albums/<%= album.id %>/delete'> Delete Album</a></p>
 
   <hr/>
 <% end %>

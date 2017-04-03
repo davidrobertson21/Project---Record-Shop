@@ -4,18 +4,19 @@
   <br/>
   
   <label for="artist_id">Artist:</label>
-  <input id="artist_id" type="text" name="artist_id" value =<%= @album.artist_id.name %> />
-  <br/>
+ <select id="artist_id" name="artist_id">
+   <% @artists.each do |artist|  %>
+   <option value = <%= artist.id %>> <%= artist.name %> </option>
+   <%end%>
+ </select>
+   <br/>
 
   <label for="genre_id">Genre:</label>
-  <select id="genre_id"> name="genre">
-    <option value = "Grime" <%="selected" if @album.genre_id.type == "Grime"  %>>Grime</option>
-    <option value = "Hip-Hop"<%="selected" if @album.genre_id.type == "Hip-HopDrum & Bass"  %>>Hip-HopDrum & Bass</option>
-    <option value = "Drum & Bass" <%="selected" if @album.genre_id.type == "Drum & Bass"  %>>Drum & Bass</option>
-    <option value = "Rock" <%="selected" if @album.genre_id.type == "Rock"  %>>Rock</option>
-    <option value = "Contempary R&B" <%="selected" if @album.genre_id.type == "Contempary R&B"  %>>Contempary R&B</option>
-    <option value = "R&B" <%="selected" if @album.genre_id.type == "R&B"  %>>R&B</option>
-    <option value = "Techno" <%="selected" if @album.genre_id.type == "Techno"  %>>Techno</option>
+  <select id="genre_id" name="genre_id">
+
+  <% @genres.each do |genre|  %>
+  <option value = <%= genre.id %>> <%= genre.type %> </option>
+  <%end%>
   </select>
   <br/>
 

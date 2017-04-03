@@ -1,0 +1,37 @@
+<form method="post" action="/albums">
+  <label for="title">Title:</label>
+  <input id="title" type="text" name="title" />
+  <br/>
+  
+  <label for="artist_id">Artist:</label>
+  <input id="artist_id" type="text" name="artist_id" />
+  <br/>
+
+  <label for="genre_id">Genre:</label>
+  <select id="genre_id" name="genre_id">
+    <option value = "Grime">Grime</option>
+    <option value = "Hip-Hop">Hip-Hop</option>
+    <option value = "Drum & Bass">Drum & Bass</option>
+    <option value = "Rock">Rock</option>
+    <option value = "R&B">R&B</option>
+    <option value = "Techno">Techno</option>
+
+  </select>
+  <br/>
+
+  <label for="quantity">Quantity:</label>
+  <input id="quantity" type="number" name="quantity" />
+  <br/>
+
+  <label for="buy_price">Buy Price:</label>
+  <input id="buy_price" type="number" name="buy_price" />
+  <br/>
+
+  <label for="album_artwork">Album Artwork URL:</label>
+  <input id="album_artwork" type="text" name="album_artwork" />
+  <br/>
+
+  <input type="submit" value="Submit Album"/>
+
+
+</form>
