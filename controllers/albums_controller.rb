@@ -12,7 +12,7 @@ end
 
 get '/albums/new' do
   @albums = Album.all
-  erb(:"bitings/new")
+  erb(:"albums/new")
 end
 
 post '/albums' do
