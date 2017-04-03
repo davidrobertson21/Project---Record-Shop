@@ -1,0 +1,35 @@
+<form method="post" action="/albums/<%= @album.id %>/edit">
+  <label for="title">Title:</label>
+  <input id="title" type="text" name="title" value =<%=@album.title %> />
+  <br/>
+  
+  <label for="artist_id">Artist:</label>
+  <input id="artist_id" type="text" name="artist_id" value =<%= @album.artist_id.name %> />
+  <br/>
+
+  <label for="genre_id">Genre:</label>
+  <select id="genre_id"> name="genre">
+    <option value = "Grime" <%="selected" if @album.genre_id.type == "Grime"  %>>Grime</option>
+    <option value = "Hip-Hop"<%="selected" if @album.genre_id.type == "Hip-HopDrum & Bass"  %>>Hip-HopDrum & Bass</option>
+    <option value = "Drum & Bass" <%="selected" if @album.genre_id.type == "Drum & Bass"  %>>Drum & Bass</option>
+    <option value = "Rock" <%="selected" if @album.genre_id.type == "Rock"  %>>Rock</option>
+    <option value = "Contempary R&B" <%="selected" if @album.genre_id.type == "Contempary R&B"  %>>Contempary R&B</option>
+    <option value = "R&B" <%="selected" if @album.genre_id.type == "R&B"  %>>R&B</option>
+    <option value = "Techno" <%="selected" if @album.genre_id.type == "Techno"  %>>Techno</option>
+  </select>
+  <br/>
+
+  <label for="quantity">Quantity:</label>
+  <input id="quantity" type="number" name="quantity" value =<%=@album.quantity %>/>
+  <br/>
+
+  <label for="buy_price">Buy Price:</label>
+  <input id="buy_price" type="number" name="buy_price" value =<%=@album.buy_price %>/>
+  <br/>
+
+  <label for="album_artwork">Album Artwork URL:</label>
+  <input id="album_artwork" type="text" name="album_artwork" value =<%=@album.album_artwork %>/>
+  <br/>
+  <input type="submit" value="Edit Album"/>
+
+</form>

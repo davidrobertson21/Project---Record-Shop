@@ -1,0 +1,13 @@
+<h1>Albums</h1>
+
+<% @albums.each do |album| %>
+  <p>Title: <%= album.title() %> </p>
+  <p>Artist: <%= album.artist.name %> </p>
+  <p>Genre: <%= album.genre.type %> </p>
+  <p>Quantity: <%= album.quantity %> </p>
+  <p>Buy Price: <%= album.buy_price %> </p>
+  <img src= <%= album.album_artwork %> width=5% />
+  <p><a href='/albums/<%= album.id %>'> Show Album</a></p>
+
+  <hr/>
+<% end %>

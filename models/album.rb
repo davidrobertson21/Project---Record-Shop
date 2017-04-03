@@ -60,7 +60,7 @@ class Album
           ON a.genre_id = g.id
           WHERE g.id = #{@genre_id}"
     results = SqlRunner.run( sql )
-    return Zombie.new( results.first )
+    return Genre.new( results.first )
   end
 
 
