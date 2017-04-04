@@ -1,13 +1,13 @@
 <h1> Genre </h1>
 
-  <p><%= @genre.type %> </p>
+  <p><%= @genres.type %> </p>
 
 
-  <form method="post" action="/genres/<%= genre.id %>/delete">
+  <form method="post" action="/genres/<%= @genre.id %>/delete">
   <input type="submit" value="Delete Genre"/>
   </form>
 
-  <form method="get" action="/genres/<%= genre.id %>/edit">
+  <form method="get" action="/genres/<%= @genre.id %>/edit">
   <input type="submit" value="Edit Genre"/>
 
   </form>

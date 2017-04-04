@@ -95,6 +95,10 @@ class Album
     return ((@buy_price * 1.3) * @quantity) - (@buy_price * @quantity)
   end
 
+  def sell_album(num)
+    return @quantity -= num
+  end
+
 
 
   def self.all()

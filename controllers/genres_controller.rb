@@ -21,7 +21,7 @@ post '/genres' do
 end
 
 get '/genres/:id' do
-  @genres = Genre.find(params[:id])
+  @genre = Genre.find(params[:id])
   erb(:"genres/show")
 end
 
