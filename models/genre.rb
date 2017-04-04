@@ -21,9 +21,7 @@ class Genre
 
   def update()
     sql = "UPDATE genres SET
-      type = '#{ @type }',
-
-      WHERE id = '#{ @id }';"
+      type = '#{ @type }' WHERE id = '#{ @id }';"
     SqlRunner.run( sql )
   end        
 

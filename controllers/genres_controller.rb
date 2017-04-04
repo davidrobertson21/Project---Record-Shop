@@ -26,18 +26,19 @@ get '/genres/:id' do
 end
 
 post '/genres/:id/delete' do
-  Genre.delete(params[:id])
+  @genre = Genre.find(params[:id])
+  @genre.delete
   redirect to("/genres")
 end
 
 # UPDATE
 get '/genres/:id/edit' do
-  @genres = Genre.find(params[:id])
+  @genre = Genre.find(params[:id])
   erb(:"/genres/edit")
 end
 
 post '/genres/:id/edit' do
-  @genres = Genre.new(params)
-  @genres.update
-  erb(:"genres/update")
+  @genre = Genre.new(params)
+  @genre.update
+  redirect to("/genres")
 end

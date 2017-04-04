@@ -6,13 +6,13 @@
 
 
 <% @genres.each do |genre| %>
-  <p><%= genre.name() %> </p>
+  <p><%= genre.type() %> </p>
 
 
-<p><a href='/genres/<%= artist.id %>'> Show Artist</a></p>
-<p><a href='/artists/<%= artist.id %>/edit'> Edit Artist</a></p>
-<form method="post" action="/artists/<%= artist.id %>/delete">
-<input type="submit" value="Delete Artist"/>
+<p><a href='/genres/<%= genre.id %>'> Show Genre</a></p>
+<p><a href='/genres/<%= genre.id %>/edit'> Edit Genre</a></p>
+<form method="post" action="/genres/<%= genre.id %>/delete">
+<input type="submit" value="Delete Genre"/>
 </form>
 
   <hr/>
