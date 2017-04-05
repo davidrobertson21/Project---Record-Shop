@@ -63,3 +63,8 @@ line-height: 26.4px;
 font-color: #808080;
 text-align: center;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }

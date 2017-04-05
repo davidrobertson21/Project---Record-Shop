@@ -6,15 +6,15 @@
 
 <table style="width:100%">
   <tr>
-    <th>Title</th>
-    <th>Artist</th> 
-    <th>Genre</th>
-    <th>Quantity</th>
-    <th>Buy Price</th>
-    <th>Sell Price</th>
-    <th>Profit</th>
-    <th>Stock Levels</th>
-    <th>Album Artwork</th>
+    <th><strong>Title</strong></th>
+    <th><strong>Artist</strong></strong></th> 
+    <th><strong>Genre</strong></th>
+    <th><strong>Quantity</strong></th>
+    <th><strong>Buy Price</strong></th>
+    <th><strong>Sell Price</strong></th>
+    <th><strong>Profit</strong></th>
+    <th><strong>Stock Levels</strong></th>
+    <th><strong>Album Artwork</strong></th>
   </tr>
   <tr>
   <% for album in @albums %>
@@ -27,9 +27,12 @@
     <td><%= album.profit() %></td>
     <td><%= album.stock_levels() %></td>
     <td><img src= <%= album.album_artwork %> width=15% /></td>
+    <td><form method="post" action="/albums/<%= album.id %>/edit/sell"><input id="quantity" type="number" name="quantity" /><input type="submit" value="Sell Album"/></a></form></td>
     <td> <a href='/albums/<%= album.id %>'> <button class="showbtn">Show</button></a></td>
-    <td><button class="editbtn">Edit</button></td>
-    <td><button class="deletebtn">Delete</button></td>
+    <td> <a href='/albums/<%= album.id %>/edit'> <button class="editbtn">Edit</button></a></td>
+    <td><form method="post" action="/albums/<%= album.id %>/delete">
+ <input type="submit" value="Delete Album"/>
+ </form></td>
   </tr>
 
   <%end%>

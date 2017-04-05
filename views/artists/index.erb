@@ -4,16 +4,20 @@
 <br/>
 <hr/>
 
-
-<% @artists.each do |artist| %>
-  <p><%= artist.name() %> </p>
-
-
-<p><a href='/artists/<%= artist.id %>'> Show Artist</a></p>
-<p><a href='/artists/<%= artist.id %>/edit'> Edit Artist</a></p>
-<form method="post" action="/artists/<%= artist.id %>/delete">
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+ 
+  </tr>
+  <tr>
+  <% for artist in @artists %>
+    <td><%= artist.name() %></td>
+    <td> <a href='/artists/<%= artist.id %>'><button class="showbtn">Show</button></a></td>
+    <td> <a href='/artists/<%= artist.id %>/edit'> <button class="editbtn">Edit</button></a></td>
+    <td><form method="post" action="/artists/<%= artist.id %>/delete">
 <input type="submit" value="Delete Artist"/>
-</form>
+</form></td>
+  </tr>
 
-  <hr/>
-<% end %>
+  <%end%>
+</table>

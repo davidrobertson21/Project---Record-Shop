@@ -4,16 +4,36 @@
 <br/>
 <hr/>
 
-
-<% @genres.each do |genre| %>
-  <p><%= genre.type() %> </p>
-
-
-<p><a href='/genres/<%= genre.id %>'> Show Genre</a></p>
-<p><a href='/genres/<%= genre.id %>/edit'> Edit Genre</a></p>
-<form method="post" action="/genres/<%= genre.id %>/delete">
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+ 
+  </tr>
+  <tr>
+  <% for genre in @genres %>
+    <td><%= genre.type() %></td>
+    <td> <a href='/genres/<%= genre.id %>'><button class="showbtn">Show</button></a></td>
+    <td> <a href='/genres/<%= genre.id %>/edit'> <button class="editbtn">Edit</button></a></td>
+    <td><form method="post" action="/genres/<%= genre.id %>/delete">
 <input type="submit" value="Delete Genre"/>
-</form>
+</form></td>
+  </tr>
 
-  <hr/>
-<% end %>
+  <%end%>
+</table>
+
+
+
+
+<!-- <% @genres.each do |genre| %>
+#   <p><%= genre.type() %> </p>
+
+
+# <p><a href='/genres/<%= genre.id %>'> Show Genre</a></p>
+# <p><a href='/genres/<%= genre.id %>/edit'> Edit Genre</a></p>
+# <form method="post" action="/genres/<%= genre.id %>/delete">
+# <input type="submit" value="Delete Genre"/>
+# </form>
+
+#   <hr/>
+# <% end %>
