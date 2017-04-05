@@ -47,3 +47,22 @@ post '/albums/:id/edit' do
   @album.update
   redirect to("/albums")
 end
+
+# SELL
+
+get '/albums/:id/edit/sell' do
+  @album = Album.find(params[:id])
+  @genres = Genre.all
+  @artists = Artist.all
+  erb(:"albums/edit")
+end
+
+post '/albums/:id/edit/sell' do
+
+  puts params
+
+  @album = Album.find(params[:id])
+  @album.sell_album(params["quantity"].to_i)
+  @album.update
+  redirect to("/albums")
+end

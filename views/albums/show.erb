@@ -1,12 +1,19 @@
 <h1> Album </h1>
 
-  <p>Title: <%= @album.title %> </p>
-  <p>Artist: <%= @album.artist.name %> </p>
-  <p>Genre: <%= @album.genre.type %> </p>
-  <p>Quantity: <%= @album.quantity %> </p>
-  <p>Buy Price: £<%= @album.buy_price %> </p>
-  <p>Album Artwork: <%= @album.album_artwork %> </p>
 
+  <a href="https://www.youtube.com/results?search_query=<%= @album.title %>&page=&utm_source=opensearch"><p><strong>Title:</strong> <%= @album.title %></p></a>
+  <a href="https://www.music-map.com/<%= @album.artist.name %>"><p><strong>Artist:</strong> <%= @album.artist.name %></p></a>
+  <p><strong>Genre:</strong> <%= @album.genre.type %> </p>
+  <p><strong>Quantity:</strong> <%= @album.quantity %> </p>
+  <p><strong>Stock Level:</strong> <%= @album.stock_levels %> </p>
+  <p><strong>Buy Price:</strong> £<%= @album.buy_price %> </p>
+  <p><strong>Sell Price:</strong> £<%= @album.sell_price %> </p>
+  <p><strong>Profit:</strong> £<%= @album.profit %></p>
+  <p><strong>Potential Profit of All in Stock:</strong> £<%= @album.potential_profit %></p>
+  
+<a href="https://www.youtube.com/results?search_query=<%=@album.artist.name%>&page=&utm_source=opensearch">
+<img src="<%= @album.album_artwork %>" alt="Go to W3Schools!" width= 5% height=5% border="0" title = "Listen to <%=@album.artist.name%>'s songs on YouTube">
+</a>
 
 
   <form method="post" action="/albums/<%= @album.id %>/delete">

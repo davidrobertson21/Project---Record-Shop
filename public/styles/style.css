@@ -1,0 +1,65 @@
+  h1 {
+    font-family: "Andale Mono", AndaleMono, monospace;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+  }
+
+
+nav {
+width:550px;
+margin:0 auto;
+list-style:none;
+font-family: "Andale Mono", AndaleMono, monospace;
+font-size: 30px;
+font-style: normal;
+font-variant: normal;
+font-weight: 500;
+line-height: 26.4px;
+}
+nav li {
+float:center;
+}
+nav a {
+display:block;
+text-align:center;
+width:150px; /* fixed width */
+text-decoration:none; 
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+body {
+
+font-family: "Andale Mono", AndaleMono, monospace;
+font-size: 15px;
+font-style: normal;
+font-variant: normal;
+font-weight: 500;
+line-height: 26.4px;
+font-color: #808080;
+text-align: center;
+}
