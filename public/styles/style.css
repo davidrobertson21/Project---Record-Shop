@@ -1,3 +1,4 @@
+
   h1 {
     font-family: "Andale Mono", AndaleMono, monospace;
     font-size: 24px;
@@ -25,7 +26,7 @@ float:center;
 nav a {
 display:block;
 text-align:center;
-width:150px; /* fixed width */
+width:150px;
 text-decoration:none; 
 }
 ul {
@@ -60,11 +61,26 @@ font-style: normal;
 font-variant: normal;
 font-weight: 500;
 line-height: 26.4px;
-font-color: #808080;
+font-color: #dbdbdb;
 text-align: center;
 }
 
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    }
+
+    th {
+         font-size: 17px;
+
+    }
+
+    tr th strong {
+        color: #ffffff;
+        background-color: #333;
+    }
+
+    tbody tr td {
+        color: #ffffff;
+
     }
