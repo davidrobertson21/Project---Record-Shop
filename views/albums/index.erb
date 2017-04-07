@@ -23,12 +23,12 @@
     <td><%= album.artist.name() %></td> 
     <td><%= album.genre.type() %></td>
     <td><%= album.quantity() %></td>
-    <td><%= album.buy_price() %></td>
-    <td><%= album.sell_price() %></td>
-    <td><%= album.profit() %></td>
-    <td><%= album.potential_profit() %></td>
+    <td>£<%= album.buy_price() %></td>
+    <td>£<%= album.sell_price() %></td>
+    <td>£<%= album.profit() %></td>
+    <td>£<%= album.potential_profit() %></td>
     <td><%= album.stock_levels() %></td>
-    <td><img src= <%= album.album_artwork %> width=15% /></td>
+    <td><img src= <%= album.album_artwork %> width=25% /></td>
     <td><form method="post" action="/albums/<%= album.id %>/edit/sell"><input id="quantity" type="number" name="quantity" /><input type="submit" value="Sell Album"/></a></form></td>
     <td> <a href='/albums/<%= album.id %>'> <button class="showbtn">Show</button></a></td>
     <td> <a href='/albums/<%= album.id %>/edit'> <button class="editbtn">Edit</button></a></td>
